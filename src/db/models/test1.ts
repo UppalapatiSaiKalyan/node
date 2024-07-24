@@ -9,7 +9,7 @@ interface LanguageAttributes {
 
 export interface LanguageInput extends Optional<LanguageAttributes, 'id'> {}
 export interface LanguageOutput extends Required<LanguageAttributes> {}
-class Language1 extends Model<LanguageAttributes, LanguageInput> implements LanguageAttributes {
+class crud extends Model<LanguageAttributes, LanguageInput> implements LanguageAttributes {
     public id!: number;
     public languagename!: string;
     public languagecode!: string;
@@ -17,7 +17,7 @@ class Language1 extends Model<LanguageAttributes, LanguageInput> implements Lang
     public readonly updatedAt?: Date;
 }
 
-Language1.init(
+crud.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -41,4 +41,4 @@ Language1.init(
         sequelize: sequelizeconnection
     });
     
-export default Language1;
+export default crud;

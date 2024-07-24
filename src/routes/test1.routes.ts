@@ -5,7 +5,7 @@ const languageRoute = express.Router();
 
 languageRoute.use(express.json());
 
-languageRoute.get('/lange', async (req: Request, res: Response) => {
+languageRoute.get('/langget', async (req: Request, res: Response) => {
   try {
     const language = await Language1.findAll();
     res.json(language);
@@ -14,7 +14,7 @@ languageRoute.get('/lange', async (req: Request, res: Response) => {
   }
 });
 
-languageRoute.post('/lang', async (req: Request, res: Response) => {
+languageRoute.post('/langpost', async (req: Request, res: Response) => {
   const { id, languagename, languagecode } = req.body;
 
   try {
@@ -25,7 +25,7 @@ languageRoute.post('/lang', async (req: Request, res: Response) => {
   }
 });
 
-languageRoute.put('/lang/:id', async (req: Request, res: Response) => {
+languageRoute.put('/langput/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
   const { languagename, languagecode } = req.body;
 
@@ -46,7 +46,7 @@ languageRoute.put('/lang/:id', async (req: Request, res: Response) => {
   }
 });
 
-languageRoute.delete('/lang/:id', async (req: Request, res: Response) => {
+languageRoute.delete('/langdel/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
